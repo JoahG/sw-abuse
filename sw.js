@@ -12,12 +12,11 @@ this.addEventListener('install', function(event) {
 });
 
 this.addEventListener('fetch', function(event) {
-  var response;
   event.respondWith(
     return fetch(event.request).then(function(response) {
       return caches.open('v1').then(function(cache) {
         cache.put(event.request, response.clone());
-        return response;
+        return new Response('test is the response');
       })
     })
   );
