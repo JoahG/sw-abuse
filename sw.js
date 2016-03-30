@@ -13,7 +13,7 @@ this.addEventListener('install', function(event) {
 
 this.addEventListener('fetch', function(event) {
   var response;
-  event.respondWith(
+  event.respondWith(function() {
     return fetch(event.request).then(function(r) {
       response = r;
       caches.open('v1').then(function(cache) {
@@ -21,5 +21,5 @@ this.addEventListener('fetch', function(event) {
       });
       return response.clone();
     })
-  );
+  });
 });
