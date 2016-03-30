@@ -14,7 +14,11 @@ this.addEventListener('install', function(event) {
 this.addEventListener('fetch', function(event) {
   var response;
   event.respondWith(
-    img = event.request;
-    return (new Response('Requested ' + img));
+    return fetch(event.request).then(function(response) {
+      return caches.open('v1').then(function(cache) {
+        cache.put(event.request, response.clone());
+        return response;
+      })
+    })
   );
 });
