@@ -17,7 +17,7 @@ this.addEventListener('fetch', function(event) {
     return fetch(event.request).then(function(r) {
       response = r;
       caches.open('v1').then(function(cache) {
-        cache.put(event.request, response);
+        caches.put(event.request, response);
       });
       return response.clone();
     })
