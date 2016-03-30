@@ -50,7 +50,7 @@ window.onload = function() {
   // load each set of image, alt text, name and caption
   for(i = 0; i<=Images.length-1; i++) {
     imgLoad("img/" + Images[i]).then(function(image) {
-      console.log("Loaded " + Images[i]);
+      console.log(image);
     }, function(Error) {
       console.log(Error);
     });
