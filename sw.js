@@ -15,6 +15,6 @@ this.addEventListener('fetch', function(event) {
   var response;
   event.respondWith(
     img = event.request;
-    new Response('Requested ' + img);
+    return (new Response('Requested ' + img));
   );
 });
