@@ -49,10 +49,7 @@ window.onload = function() {
   var Images = Array.apply(null, Array(1000)).map(function (_, i) {return "img" + i + ".gif";});
   // load each set of image, alt text, name and caption
   for(i = 0; i<=Images.length-1; i++) {
-    imgLoad("img/" + Images[i]).then(function(image) {
-      console.log(image);
-    }, function(Error) {
-      console.log(Error);
-    });
+    imgLoad("img/" + Images[i]);
   };
+  location.reload();
 };
