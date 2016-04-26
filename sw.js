@@ -31,7 +31,7 @@ this.addEventListener('fetch', function(event) {
       }));
     }
 
-    sleep(5000);
+    sleep(4000);
     console.log("Sleeping :)");
     return response;
   });
